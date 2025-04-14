@@ -1,6 +1,7 @@
 services:
   selenoid:
-    image: "selenoid/chrome:128.0"
+    network_mode: bridge
+    image: "aerokube/selenoid:latest"
     container_name: selenoid
     ports:
       - "4444:4444"
