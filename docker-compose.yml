@@ -5,8 +5,6 @@ services:
     container_name: selenoid
     ports:
       - "4444:4444"
-    networks:
-      - selenoid
     volumes:
       - "./browsers.json:/etc/selenoid/browsers.json"
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -18,8 +16,11 @@ services:
     container_name: selenoid-test
     depends_on:
       - selenoid
-    network_mode: bridge
+    networks:
+      - selenoid
     environment:
       - SELENOID_URL=http://selenoid:4444/wd/hub              # <--- you can use this in your Java code
     volumes:
       - ~/.m2:/root/.m2
+networks:
+  selenoid:
