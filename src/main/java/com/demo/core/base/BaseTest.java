@@ -1,5 +1,6 @@
 package com.demo.core.base;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.demo.core.allure.AllureLogger;
 import com.demo.core.config.SelenideConfig;
@@ -17,6 +18,7 @@ public class BaseTest extends AllureLogger {
         String url = String.format(Constants.URL, "MNST/monster-beverage");
         logInfo("Creating web driver configuration..."); //test
         SelenideConfig.createBrowserConfig(System.getProperty("selenide.browser", "chrome"));
+        Configuration.remote = "http://localhost:4444/";
         configLog(this.getClass().getSimpleName());
         logInfo("Open browser...");
         Selenide.open(url);
