@@ -18,8 +18,7 @@ services:
     container_name: selenoid-test
     depends_on:
       - selenoid
-    networks:
-      - selenoid
+    network_mode: bridge
     environment:
       - SELENOID_URL=http://selenoid:4444/wd/hub              # <--- you can use this in your Java code
     volumes:
