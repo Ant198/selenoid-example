@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . /app
 
-CMD ["mvn", "clean", "test"]
+CMD ["mvn", "clean", "test", "-DforkCount=0"]
