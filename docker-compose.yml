@@ -1,6 +1,6 @@
 services:
   selenoid:
-    image: "aerokube/selenoid:114.0"
+    image: "aerokube/selenoid:latest"
     container_name: selenoid
     ports:
       - "4444:4444"
