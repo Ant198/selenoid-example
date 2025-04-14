@@ -23,5 +23,3 @@ services:
       - SELENOID_URL=http://selenoid:4444/wd/hub              # <--- you can use this in your Java code
     volumes:
       - ~/.m2:/root/.m2
-networks:
-  selenoid:
